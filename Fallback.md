@@ -11,7 +11,14 @@ You will beat this level if
 
 #### What makes the fallback and receive functions special compared to other functions in solidity?
 
-The fallback and receive functions are special because solidity reserves the keywords, "fallback" and "receive" for the creation of these functions. Ironically, these functions cannot be called explicity programmatically, but rather via the EVM. Since the EVM calls these functions, it expects those keyworks and this eliminates the need for the programmer to define custom function names. Smart contracts can implement at most one fallback and 
+The fallback and receive functions are special because solidity reserves the keywords, "fallback" and "receive" for the creation of these functions. Ironically, these functions cannot be called explicity programmatically, but rather via the EVM.
+```
+//bad code
+fallback()
+//bad code
+receive ()
+```
+ Since the EVM calls these functions, it expects those keyworks and this eliminates the need for the programmer to define custom function names. Smart contracts can implement at most one fallback and 
 one receive. The EVM will call either of them in instances where calls to a contract are made without specifying an existing function. A contract is a collection of fields and functions and just calling a contracInstances where contracts are called incorrectly are when a EOA or another contract calls a function that does not exist. 
 ``` solidity
 contract Foo {
