@@ -9,6 +9,19 @@ You will beat this level if
 
 ### A bit of Solidity theory on fallback and receive functions
 
+#### What are fallback and recieved functions used for?
+
+Fallback and recieve functions are used for instances where a contract is called without specifying which existing functions will handle the call.
+
+```
+// This line send 10 e
+address.send(10);
+address.transfer(10);
+address.call{10}("");
+address.call{10}(abi.EncodeWithSignature("functionDoesNotExsit()"));
+address.call("")
+```
+
 #### What makes the fallback and receive functions special compared to other functions in solidity?
 
 The fallback and receive functions are special because solidity reserves the keywords, "fallback" and "receive" for the creation of these functions. Ironically, these functions cannot be called explicity programmatically, but rather via the EVM.
