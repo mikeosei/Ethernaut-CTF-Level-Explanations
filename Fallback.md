@@ -25,7 +25,7 @@ msg.sender
 }
 ```
 
-```
+``` solidity
 Foo foo = new Foo();
 Address address = (Address)foo;
 // Calling no function
