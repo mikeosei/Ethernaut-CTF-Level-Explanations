@@ -14,9 +14,9 @@ You will beat this level if
 Fallback and recieve functions are used for instances where a contract is called without specifying which existing functions will be invoked.
 
 ```
-// This line sends 10 eth. The send function does have a parameter to handle calls to specific functions. it's execution relies on the implementation of a fallback or recieve function to control how the eth will be handled
+// This line sends 10 eth. The send function does not have a parameter to handle calls to specific functions. it's execution relies on the implementation of a fallback or recieve function to control how the eth will be handled
 address.send(10);
-// This line transfers 10 eth. The transfer function does have a parameter to handle calls to specific functions. it's execution relies on the implementation of a fallback or recieve function to control how the eth will be handled
+// This line transfers 10 eth. The transfer function does not have a parameter to handle calls to specific functions. it's execution relies on the implementation of a fallback or recieve function to control how the eth will be handled
 address.transfer(10);
 // This line sets a value of 10 eth to be sent, but it does not specify which function will handle the funds - it's blank. it's execution relies on the implementation of a fallback or recieve function to control how the eth will be handled
 address.call{value: 10}("");
