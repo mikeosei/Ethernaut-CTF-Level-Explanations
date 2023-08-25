@@ -54,12 +54,16 @@ emit Type("red");
 receive() payable external {
 msg.sender
 }
+
+fallback() payable external {
+msg.sender
+}
 ```
 
 ``` solidity
 Foo foo = new Foo();
 Address address = (Address)foo;
-// Calling no function
+// Calling no function but sending eth will trigger receive.
 address.call{value:32}("");
 // Calling a function that does not exist
 address.call{value:32}(abi.encodeWithSignature("pear()"));
