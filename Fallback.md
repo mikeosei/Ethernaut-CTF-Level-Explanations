@@ -65,7 +65,7 @@ Foo foo = new Foo();
 Address address = (Address)foo;
 // Calling no function but sending eth will trigger receive.
 address.call{value:32}("");
-// Calling a function that does not exist
+// Calling a function that does not exist but sends eth will trigger fallback
 address.call{value:32}(abi.encodeWithSignature("pear()"));
 ```
 Instead of raising an exception and stopping execution, fallback and receive functions act as a last measure in providing an alternate execution route.
