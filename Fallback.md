@@ -37,10 +37,10 @@ fallback() external{
 // logic
 }
 ---
-//bad code because attempting explicit external function call. Fallback is implicitly invoked by EVM.
+//bad code because attempting explicit external function call. Fallback needs to be implicity invoked by EVM when a contract is called without specifying an existing function.
 fallback()
 
-//bad code because attempting explicit external function call. Receive is implicitly invoked by EVM.
+//bad code because attempting explicit external function call. Receive needs to be implicity invoked by EVM when a contract is called without specifying an existing function.
 receive()
 ```
 Smart contracts can implement at most one fallback and one receive. The EVM will call either of them in instances where calls to a contract are made without specifying an existing function. A contract is a collection of fields and functions and just calling a contract instances where contracts are called incorrectly are when a EOA or another contract calls a function that does not exist. 
