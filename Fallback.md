@@ -43,8 +43,7 @@ fallback()
 //bad code because attempting explicit external function call. Receive is implicitly invoked by EVM.
 receive()
 ```
- Since the EVM calls these functions, it expects those keyworks and this eliminates the need for the programmer to define custom function names. Smart contracts can implement at most one fallback and 
-one receive. The EVM will call either of them in instances where calls to a contract are made without specifying an existing function. A contract is a collection of fields and functions and just calling a contracInstances where contracts are called incorrectly are when a EOA or another contract calls a function that does not exist. 
+Smart contracts can implement at most one fallback and one receive. The EVM will call either of them in instances where calls to a contract are made without specifying an existing function. A contract is a collection of fields and functions and just calling a contract instances where contracts are called incorrectly are when a EOA or another contract calls a function that does not exist. 
 ``` solidity
 contract Foo {
 event Type(String color);
