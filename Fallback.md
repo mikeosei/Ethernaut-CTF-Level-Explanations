@@ -93,4 +93,5 @@ When another contract or Externally Owner Address (EOA) calls the func
 #### Basic
 
 
-### Real World Example
+### ELIF
+Code is a list of instructions. If you interact with the list without specifying a existing instruction, then the default instructions (receive and fallback) will be followed.
