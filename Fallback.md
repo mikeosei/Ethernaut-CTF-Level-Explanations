@@ -18,9 +18,10 @@ Fallback and recieve functions are used for instances where a contract is called
 address.send(10);
 // This line transfers 10 eth. The transfer function does not have a parameter to handle calls to specific functions. it's execution relies on the implementation of a fallback or recieve function to control how the eth will be handled
 address.transfer(10);
-// This line sets a value of 10 eth to be sent, but it does not specify which function will handle the funds - it's blank. it's execution relies on the implementation of a fallback or recieve function to control how the eth will be handled
+// This line sets a value of 10 eth to be sent, but it does not specify which function will handle the funds - it's blank. It's execution relies on the implementation of a fallback or recieve function to control how the eth will be handled.
 address.call{value: 10}("");
-address.call{10}(abi.EncodeWithSignature("functionDoesNotExsit()"));
+// This line sets a value of 10 eth to be sent, but does not specify an existing functions. it's execution relies on the implementation of an existing fallback or recieve function to control how the eth will be handled
+address.call{value: 10}(abi.EncodeWithSignature("functionDoesNotExsit()"));
 address.call("")
 ```
 
