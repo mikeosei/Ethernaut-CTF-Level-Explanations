@@ -20,9 +20,9 @@ address.send(10);
 address.transfer(10);
 // This line sets a value of 10 eth to be sent, but it does not specify which function will handle the funds - it's blank. It's execution relies on the implementation of a fallback or recieve function to control how the eth will be handled.
 address.call{value: 10}("");
-// This line sets a value of 10 eth to be sent, but does not specify an existing functions. it's execution relies on the implementation of an existing fallback or recieve function to control how the eth will be handled
+// This line sets a value of 10 eth to be sent, but does not specify an existing functions. it's execution relies on the implementation of an existing fallback or recieve function to control how the eth will be handled.
 address.call{value: 10}(abi.EncodeWithSignature("functionDoesNotExsit()"));
-// In Solidity, the call function can be trigger with just parenthesis and not curly braces - address.call(bytes memory msg). Truthfully, you should only be adding curly braces to a call when you want to specify gas or ether that you want to send to a contract. In this instance accepts a single bytes memory parameter The functions abi.encode, abi.encodePacked, abi.encodeWithSelector and abi.encodeWithSignature can be used to encode structured data.
+// In Solidity, the call function can be trigger with just parenthesis and not curly braces - address.call(bytes memory msg). Truthfully, you should only be adding curly braces alongside the call function call when you want to specify gas or ether that you want to send to a contract. The call function expects a single bytes memory parameter. The functions abi.encode, abi.encodePacked, abi.encodeWithSelector and abi.encodeWithSignature can be used to encode. structured data.
 address.call(abi.EncodeWithSignature(""))
 ```
 
