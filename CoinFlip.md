@@ -8,10 +8,10 @@ The blockchain by nature is deterministic - the hash of each block is based on t
 
 // Randomness provided by this is predicatable. Use with care!
 
-'''
+```
 function randomNumber() internal view returns (uint) {
     return uint(blockhash(block.number - 1));
 }
-'''
+```
 
 The belief is this function will generate a random number but it isn’t so random because if I know the block number is 67890, I can hash it myself and now I have the random number
