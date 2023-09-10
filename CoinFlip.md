@@ -1,6 +1,6 @@
 ## What makes something random?
 
-A random event is an event where the outcome cannot be easily predicted. The other words, the resistance of a probabilistic scenario from artificial tampering. You cannot 100% determine the result of a coin flip or the 2050 nba champion. These random events rely on a variety of factors that increase the entropy in each system.
+A random event is an event where the outcome cannot be easily predicted. The other words, the resistance of a probabilistic scenario from artificial tampering. You cannot 100% determine the result of a coin flip. Random events rely on a variety of factors that increase the entropy in each system. In computer science, it's hard to replicate the factors that influence a coin flip such as air drag, force, angle, and coin quality. Furthermore, the coded replication of a probablistic scenerio on a computer inherently includes the step/conditions that will lead to a certain outcome.
 
 ## Why is randomness difficult to reproduce on the blockchain?
 
@@ -14,6 +14,4 @@ function randomNumber() internal view returns (uint) {
 }
 ```
 
-The belief is this function will generate a random number, but it isn’t so random because if I know the block number is 67890, I can hash it myself and now I have the random number before the function is officially ran.
-
-In a way, we are able to "frontrun" the execution of a randomize event that uses block.number, by running the exact same code.
+The belief is this function will generate a random number, but it isn’t so random because if I can simulate this same function on my local machine for example and now I have the random number before the function is officially ran on the blockchain. In a way, we are able to "frontrun" the execution of a randomize event that uses block.number or other blockchain properties, by running the exact same code.
