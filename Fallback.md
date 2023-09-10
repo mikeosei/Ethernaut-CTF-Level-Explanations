@@ -22,7 +22,8 @@ address.transfer(10);
 address.call{value: 10}("");
 // This line sets a value of 10 eth to be sent, but does not specify an existing functions. it's execution relies on the implementation of an existing fallback or recieve function to control how the eth will be handled
 address.call{value: 10}(abi.EncodeWithSignature("functionDoesNotExsit()"));
-address.call("")
+// In Solidity, the call function can be trigger with just parenthesis and not curly braces - address.call(bytes memory msg). Truthfully, you should only be adding curly braces to a call when you want to specify gas or ether that you want to send to a contract. In this instance accepts a single bytes memory parameter The functions abi.encode, abi.encodePacked, abi.encodeWithSelector and abi.encodeWithSignature can be used to encode structured data.
+address.call(abi.EncodeWithSignature(""))
 ```
 
 #### What makes the fallback and receive functions special compared to other functions in solidity?
